@@ -16,11 +16,8 @@ A modern React Native demo application showcasing a cross-platform Select compon
 
 ### Screen Recording
 <!-- Buraya ekran kaydı videosu eklenecek -->
-*Screen recording will be added here*
+https://github.com/user-attachments/assets/7a5a99bc-5101-409e-ac5e-7dfabb09d43b
 
-### Screenshots
-<!-- Buraya ekran görüntüleri eklenecek -->
-*Screenshots will be added here*
 
 ## 🏗️ Technical Stack
 
