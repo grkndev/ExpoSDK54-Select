@@ -7,7 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import type { TriggerRef } from '@rn-primitives/select';
+import type { Option, TriggerRef } from '@rn-primitives/select';
 import * as React from 'react';
 import { Platform } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -20,7 +20,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
     { label: 'Pineapple', value: 'pineapple' },
   ];
    
-  export function SelectPreview() {
+  export function SelectPreview({ onSelect }: { onSelect: (option: Option) => void }) {
     const ref = React.useRef<TriggerRef>(null);
     const insets = useSafeAreaInsets();
     const contentInsets = {
@@ -34,13 +34,14 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
     function onTouchStart() {
       ref.current?.open();
     }
+    
    
     return (
-      <Select>
+      <Select onValueChange={onSelect}>
         <SelectTrigger ref={ref} className="w-[180px]" onPress={onTouchStart}>
           <SelectValue placeholder="Select a fruit" />
         </SelectTrigger>
-        <SelectContent insets={contentInsets} className="w-[180px]">
+        <SelectContent insets={contentInsets} className="w-[180px]" >
           <SelectGroup>
             <SelectLabel>Fruits</SelectLabel>
             {fruits.map((fruit) => (
